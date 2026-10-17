@@ -1,0 +1,5 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SistVenta.Api/SistVenta.Api.csproj" />
+  </Folder>
+</Solution>
