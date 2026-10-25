@@ -118,14 +118,14 @@ public class ComprasController : ControllerBase
         }
 
         // Manejar el caso cuando no se proporciona usuario
-        int? idUsuarioFinal = dto.IdUsuario;
-        if (!idUsuarioFinal.HasValue)
+        int idUsuarioFinal;
+        if (!dto.IdUsuario.HasValue)
         {
             // Buscar un usuario por defecto (el primero activo) o crear uno temporal
             var usuarioDefault = await _context.Usuarios
                 .Where(u => u.Estado_id == 1)
                 .FirstOrDefaultAsync();
-            
+
             if (usuarioDefault != null)
             {
                 idUsuarioFinal = usuarioDefault.IdUsuario;
@@ -156,6 +156,7 @@ public class ComprasController : ControllerBase
             {
                 return BadRequest($"Usuario con ID {dto.IdUsuario} no encontrado");
             }
+            idUsuarioFinal = dto.IdUsuario.Value;
         }
 
         // Validar que el proveedor existe

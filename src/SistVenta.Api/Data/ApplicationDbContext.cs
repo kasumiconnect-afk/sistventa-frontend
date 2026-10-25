@@ -53,7 +53,7 @@ public class ApplicationDbContext : DbContext
         modelBuilder.Entity<LogLogin>().ToTable("loglogin");
         modelBuilder.Entity<Entrega>().ToTable("entrega");
         modelBuilder.Entity<Compra>().ToTable("compra");
-        modelBuilder.Entity<DetalleCompra>().ToTable("detallecompra");
+        modelBuilder.Entity<DetalleCompra>().ToTable("detalle_compra");
         modelBuilder.Entity<Venta>().ToTable("venta");
         modelBuilder.Entity<DetalleVenta>().ToTable("detalle_venta");
         modelBuilder.Entity<Cotizacion>().ToTable("cotizacion");
